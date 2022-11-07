@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8">
+  <title>即期競標系統</title>
+  <script type="text/javascript">
+	function check_data(){
+	if (document.myForm.account.value.length==0)
+	{
+		alert("賣家編號不可空白");
+		return false;
+			}
+	
+	else if(document.myForm.account.value.length>20)
+	{
+		alert("賣家編號不超過20字元");
+		return false;
+			}	
+	
+	else if(document.myForm.password.value.length==0)
+	{
+		alert("密碼不可空白");
+		return false;
+			}
+	
+
+	else if(document.myForm.password.value != document.myForm.re_password.value )
+	{
+		alert("密碼確認要和密碼相同");
+		return false;
+			}
+			
+			
+	else if(document.myForm.cellphone.value.length==0)
+	{
+		alert("電話號碼不可留白");
+		return false;
+			}
+			
+			
+	else if(document.myForm.email.value.length==0)
+	{
+		alert("信箱不可留白");
+		return false;
+			}
+	else myForm.submit();
+		}
+		
+	
+</script>
+ </head>
+ <body>
+  <p align="center"><b><i><font size="7">註冊帳號</font></i></b></p>
+  <form action="addseller.php" method="post" name="myForm">
+	<table border="2" align="center" bordercolor="#6666FF">
+	<tr>
+		<td colspan="2" bgcolor="#6666FF" align="center">
+			<font color="#FFFFFF">請填入以下資料(*代表務必填寫)</font>
+		</td>
+	</tr>
+	<tr bgcolor="#99ff99">
+		<td align="right">*賣家編號:</td>
+		<td><input name="account" type="text" size="15">
+		(請使用數字或英文)</td>
+	</tr>
+
+	<tr bgcolor="#99ff99">
+		<td align="right">*賣家密碼:</td>
+		<td><input name="password" type="password" size="15">
+		(請使用數字或英文)</td>
+	</tr>
+	
+	<tr bgcolor="#99ff99">
+		<td align="right">*密碼確認:</td>
+		<td><input name="re_password" type="password" size="15">
+		(請使用數字或英文)</td>
+	</tr>
+	
+	<tr bgcolor="#99ff99">
+		<td align="right">*電話:</td>
+		<td><input name="cellphone" type="text" size="15"></td>
+	</tr>
+	
+	<tr bgcolor="#99ff99">
+		<td align="right">*電子信箱:</td>
+		<td><input name="email" type="text" size="15"></td>
+	</tr>
+	
+	<tr bgcolor="#99ff99">
+		<td align="center" colspan="2">
+			<input type="button" value="成為賣家" onclick="check_data()">
+			<input type="reset" value="重新填寫">
+		</td>
+	</tr>
+	</table>
+	</form>
+ </body>
+</html> 
